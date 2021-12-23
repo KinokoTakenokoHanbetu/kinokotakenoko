@@ -91,9 +91,9 @@
         var myArea = document.getElementById("myArea");
 
         if (prediction[0].probability.toFixed(2) > 90) {
-            myArea.innerHTML = "<h1 style = 'color:#ffff33'>きのこの山</h2>";
+            myArea.innerHTML = "<h2 style = 'color:#ffff33'>きのこの山</h2>";
         } else if (prediction[1].probability.toFixed(2) > 90) {
-            myArea.innerHTML = "<h1 style = 'color:#99ff66'>たけのこの里</h2>";
+            myArea.innerHTML = "<h2 style = 'color:#99ff66'>たけのこの里</h2>";
         }
         
         for (let i = 0; i < maxPredictions; i++) {
