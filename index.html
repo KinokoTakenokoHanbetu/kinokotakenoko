@@ -55,10 +55,10 @@
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new Image(300, 300);//new tmImage.Webcam(300, 300, flip); // width, height, flip
-        webcam.src = "./00010058.JPG"
-        //await webcam.setup(); // request access to the webcam
-        //await webcam.play();
+        webcam = new tmImage.Webcam(300, 300, flip); // width, height, flip
+        //webcam.src = "./00010058.JPG"
+        await webcam.setup(); // request access to the webcam
+        await webcam.play();
         window.requestAnimationFrame(loop);
 
         // append elements to the DOM
@@ -69,11 +69,11 @@
         }
     }
 
-    //async function loop() {
-        //webcam.update(); // update the webcam frame
-        //await predict();
-        //window.requestAnimationFrame(loop);
-    //}
+    async function loop() {
+        webcam.update(); // update the webcam frame
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
 
     // run the webcam image through the image model
     async function predict() {
