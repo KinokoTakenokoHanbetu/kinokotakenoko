@@ -20,10 +20,9 @@
 <body>
     <h1>きのこの山･たけのこの里判定マシーン</h1>
     <script>
-        document.write("<h2>きのこの山とたけのこの里を写してください</h2>");
+        //document.write("<h2>きのこの山とたけのこの里を写してください</h2>");
         document.title = "きのたけ判定"
         document.body.style.color = "chocolate";
-        document.body.style.backgroundColor = "#c2ff66"
     </script>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
@@ -88,9 +87,17 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
+
+        var myArea = document.getElementById("myArea");
+
+        if (prediction[0].probability.toFixed(2) > 90) {
+            myArea.innerHTML = "<h1 style = 'color:#ffff33'>きのこの山</h2>";
+        } else if (prediction[1].probability.toFixed(2) > 90) {
+            myArea.innerHTML = "<h1 style = 'color:#99ff66'>たけのこの里</h2>";
+        }
         
         for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
+            const classPrediction = 
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
