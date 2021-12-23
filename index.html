@@ -90,16 +90,14 @@
 
         var myArea = document.getElementById("myArea");
 
-        if (prediction[0].probability.toFixed(2) > 90) {
-            myArea.innerHTML = "<h2 style = 'color:#ffff33'>きのこの山</h2>";
-        } else if (prediction[1].probability.toFixed(2) > 90) {
-            myArea.innerHTML = "<h2 style = 'color:#99ff66'>たけのこの里</h2>";
+        if (prediction[0].probability.toFixed(2) > 0.9) {
+            myArea.innerHTML = "<h1 style = 'color:#c2ff66'>きのこの山</h1>";
+            document.body.style.backgroundColor = "#ffff33"
+        } else if (prediction[1].probability.toFixed(2) > 0.9) {
+            myArea.innerHTML = "<h1 style = 'color:#00b300'>たけのこの里</h1>";
+            document.body.style.backgroundColor = "#c6ff1a"
         }
         
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction = 
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
 </script>
