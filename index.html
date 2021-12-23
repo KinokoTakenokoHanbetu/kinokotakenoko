@@ -89,16 +89,24 @@
         const prediction = await model.predict(webcam.canvas);
 
         var myArea = document.getElementById("myArea");
-        myArea.innerHTML = "<h1 style = 'color:#c2ff66'>きのこの山</h1>";
+        var result = new Array(3);
+        var n = 2;
+        result [0] = "<h1 style='color:#c2ff66'>きのこの山</h1>";
+        result [1] = "<h1 style='color:#00b300'>たけのこの里</h1>";
+        result [2] = "判定中";
 
         if (prediction[0].probability.toFixed(2) > 0.9) {
-            myArea.innerHTML = "<h1 style='color:#c2ff66'>きのこの山</h1>";
-            document.body.style.backgroundColor = "#ffff33"
+            n = 0;
+            document.body.style.backgroundColor = "#ffff33";
         } else if (prediction[1].probability.toFixed(2) > 0.9) {
-            myArea.innerHTML = "<h1 style='color:#00b300'>たけのこの里</h1>";
-            document.body.style.backgroundColor = "#c6ff1a"
+            n = 1;
+            document.body.style.backgroundColor = "#c6ff1a";
+        } else {
+            n = 2;
         }
         
+        myArea.innerHTML = result [n];
+
         }
     
 </script>
