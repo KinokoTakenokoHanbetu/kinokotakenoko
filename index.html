@@ -89,6 +89,7 @@
         const prediction = await model.predict(webcam.canvas);
 
         var myArea = document.getElementById("myArea");
+        myArea.innerHTML = "<h1 style = 'color:#c2ff66'>きのこの山</h1>";
 
         if (prediction[0].probability.toFixed(2) > 0.9) {
             myArea.innerHTML = "<h1 style = 'color:#c2ff66'>きのこの山</h1>";
