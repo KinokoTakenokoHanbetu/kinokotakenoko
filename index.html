@@ -9,7 +9,6 @@
         body {
             text-align: center;
         }
-
         #myArea {
             background: yellow;
         }
@@ -23,6 +22,10 @@
         //document.write("<h2>きのこの山とたけのこの里を写してください</h2>");
         document.title = "きのたけ判定"
         document.body.style.color = "chocolate";
+    </script>
+    <script>
+        var myArea = document.getElementById("myArea");
+        myArea.innerHTML = "<h2>Java</h2>";
     </script>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
@@ -104,11 +107,11 @@
         } else {
             n = 2;
         }
-        
         myArea.innerHTML = result [n];
 
         }
     
 </script>
+<h2 id="myArea"></h2>
 </body>
 </html>
