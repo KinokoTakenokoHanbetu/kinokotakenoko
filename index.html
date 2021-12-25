@@ -20,7 +20,7 @@
         document.body.style.color = "chocolate";
         if(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i)){ // PCとスマホでタイトルの表示を変更する
             headline.innerHTML = "<h2>きのこの山<br>たけのこの里<br>判定マシーン</h2>"
-            headline.style.fontSize = "xx-large"
+            headline.style.fontSize = "x-large"
             headline.style.lineHeight = "1.2"
         } else{
             headline.style.fontSize = "xxx-large";
@@ -87,7 +87,7 @@
         var n = 2;
         result [0] = "<h1 style='color:#734d26'>きのこの山</h1>";
         result [1] = "<h1 style='color:#1a9900'>たけのこの里</h1>";
-        result [2] = "判定中";
+        result [2] = "<br>判定中";
 
         if (prediction[1].probability.toFixed(2) > 0.9) {
             n = 0;
