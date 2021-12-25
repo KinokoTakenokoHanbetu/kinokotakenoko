@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-    <h1 id = "headline">きのこの山･たけのこの里判定マシーン</h1>
+    <h1 id = "headline"></h1>
     <script>
         var headline = document.getElementById("headline");
         headline.style.fontFamily = "sans-serif";
@@ -23,7 +23,8 @@
             headline.style.fontSize = "x-large"
             headline.style.lineHeight = "1.2"
         } else{
-            headline.style.fontSize = "xxx-large";
+            headline.innerHTML = "<h1>きのこの山･たけのこの里判定マシーン</h1>"
+            headline.style.fontSize = "xx-large";
         }
         //document.write("<h2>きのこの山とたけのこの里を写してください</h2>");
     </script>
